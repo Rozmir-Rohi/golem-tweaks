@@ -1,0 +1,16 @@
+[
+{
+  "modid": "golemtweaks",
+  "name": "Golem Tweaks",
+  "description": "Golems are now just a bit better.",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Rozmir"],
+  "credits": "Mr Crayfish, ganymedes0, and thehippomaster21. See credits file in jar archive for contributions.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
