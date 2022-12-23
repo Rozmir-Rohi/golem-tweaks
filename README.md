@@ -2,7 +2,7 @@
 Quality of life mod for Iron and Snow Golems with backported repairable Iron Golems and more!
 
 
-Note: This repository is archived and is read only.
+# Note: This repository is archived and is read only.
 
 	
     ================================
