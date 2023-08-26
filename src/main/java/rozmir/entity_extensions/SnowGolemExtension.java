@@ -24,13 +24,6 @@ public class SnowGolemExtension extends EntitySnowman
 		super(world);
 	}
 	
-	protected void applyEntityAttributes()
-    {
-        super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(8.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
-    }
-	
 	public void onLivingUpdate()
     {
         super.onLivingUpdate();
@@ -84,7 +77,7 @@ public class SnowGolemExtension extends EntitySnowman
 	                --itemstack.stackSize; //decrease the amount by one
 	            }
 	    		
-	    		tryToHealSnowGolem();
+	    		healSnowGolem();
 	    		
 	            if (itemstack.stackSize <= 0)
 	            {
@@ -105,20 +98,14 @@ public class SnowGolemExtension extends EntitySnowman
         
         if ((sourceDamage != null) && (sourceDamage instanceof EntitySnowball))
         {
-        	this.tryToHealSnowGolem();
-        	return true;
-        }
-        
-        if ((sourceDamage != null) && (sourceDamage instanceof SnowGolemBall))
-        {
-        	this.tryToHealSnowGolem();
+        	this.healSnowGolem();
         	return true;
         }
         
         return super.attackEntityFrom(source, dmg);
     }
     
-	public void tryToHealSnowGolem()
+	public void healSnowGolem()
 	{
 		if (this.getHealth() < this.getMaxHealth())
 		{
@@ -127,18 +114,6 @@ public class SnowGolemExtension extends EntitySnowman
 			this.playSound("step.snow", 0.75F, 1.0F); //play healing sound
 		}
 	}
-	
-	public void attackEntityWithRangedAttack(EntityLivingBase entity, float damage)
-    {
-        SnowGolemBall entitysnowball = new SnowGolemBall(this.worldObj, this);
-        double d0 = entity.posX - this.posX;
-        double d1 = entity.posY + (double)entity.getEyeHeight() - 1.100000023841858D - entitysnowball.posY;
-        double d2 = entity.posZ - this.posZ;
-        float f1 = MathHelper.sqrt_double(d0 * d0 + d2 * d2) * 0.2F;
-        entitysnowball.setThrowableHeading(d0, d1 + (double)f1, d2, 1.6F, 12.0F);
-        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-        this.worldObj.spawnEntityInWorld(entitysnowball);
-    }
 	
 	
 }

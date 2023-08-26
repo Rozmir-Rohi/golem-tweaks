@@ -47,28 +47,17 @@ public class IronGolemExtension extends EntityIronGolem
 	    return super.interact(player);    
 	}
     
-    public boolean attackEntityAsMob(Entity entity)
+    public boolean canAttackClass(Class entity_class)
     {
-		if (!(entity instanceof SnowGolemExtension) && !(entity instanceof EntityPlayer))
-		{
-	        this.worldObj.setEntityState(this, (byte)4);
-	        boolean flag = entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)(7 + this.rand.nextInt(15)));
-
-	        if (flag)
-	        {
-	            entity.motionY += 0.4000000059604645D;
-	        }
-
-	        this.playSound("mob.irongolem.throw", 1.0F, 1.0F);
-	        return flag;
-		}
-		
-		else 
-		{
-			this.setAttackTarget((EntityLivingBase)null);  //ignore attack
-			return true;
-		}
-        
+    	if (EntityPlayer.class.isAssignableFrom(entity_class) || SnowGolemExtension.class.isAssignableFrom(entity_class))
+    	{
+    		return false;
+    	}
+        		
+    	else
+    	{
+    		return super.canAttackClass(entity_class);
+    	}
     }
 	
 }
