@@ -5,7 +5,7 @@ Quality of life mod for Iron and Snow Golems with backported repairable Iron Gol
 
 
 
-## CREDITS & LICENSE CONDITIONS:
+## Credits & License Conditions:
 **Mr Crayfish** - 1.7.10 Forge Modding Tutorials on YouTube explained developer environments and basic mod structure.
 
 **ganymedes0** - Code for ServerEventHandler.class in the Et Futurum mod helped to figure out how to replace vanilla golems with modded ones. This code was used under the Public Domain Licence.
