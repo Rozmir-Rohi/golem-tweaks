@@ -14,7 +14,7 @@ Here is a list of changes to Forge's 1.7.10 MDK Gradle build script, to replace 
 **thehippomaster21** - Code for healing Snow Golems from the Snowball projectile was sourced from MutantSnowGolem.class in the Mutant Creatures Mod on 22nd of November 2022 under the GNU Affero General Public License v3.0.
 
 ### Use of anatawa12's Fork of ForgeGradle 1.2
-The source code of this project uses anatawa12's fork of ForgeGradle 1.2 as a library under the GNU Lesser General Public License v2.1.
+The source code of this project uses anatawa12's fork of ForgeGradle 1.2 as a library under the GNU Lesser General Public License v2.1 (https://choosealicense.com/licenses/lgpl-2.1/).
  
 
 Compiled versions of this mod are permitted under section 5 of the original license, "A program that contains no derivative of any portion of the Library, but is designed to work with the Library by being compiled or linked with it, is called a "work that uses the Library". Such a work...is not a derivative work of the Library"; consequently the conditions of original license do not apply to the work.
