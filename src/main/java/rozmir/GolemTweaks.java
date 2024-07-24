@@ -1,5 +1,6 @@
 package rozmir;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -22,6 +23,8 @@ public class GolemTweaks
 	public static CommonProxy proxy;
 	
 	public static Configuration configFile;
+	
+	private static boolean isThaumcraftLoaded;
 	
 	public static boolean enableSnowGolemBuffs;
 	public static int snowGolemHealAmount;
@@ -51,6 +54,10 @@ public class GolemTweaks
         MinecraftForge.EVENT_BUS.register((Object)new ReplaceVanillaGolemsEvent());
         
         proxy.registerEntityRenderers();
+        
+        isThaumcraftLoaded = Loader.isModLoaded("Thaumcraft");
+        
+        if (isThaumcraftLoaded) {GolemTweaksThaumcraftAspects.addThaumcraftAspects();};
     }
     
     public static void syncConfigSettings()

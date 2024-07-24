@@ -8,4 +8,6 @@ ganymedes0 - Code for ServerEventHandler.class in the "Etfuturum" mod helped to 
 
 thehippomaster21 - Code for healing snow golems from snowball projectile was sourced from MutantSnowGolem.class in the "Mutant Creatures" mod
 
+Azanor - Thaumcraft API v4.2.2.0 was used as a library for the project. This was used under the MIT License (https://choosealicense.com/licenses/mit/).
+
 NOTE: The textures for Iron Golem cracking, the Iron Golem cracking sounds, and the Iron Golem heal sound was sourced from the 1.15 version of Minecraft.
