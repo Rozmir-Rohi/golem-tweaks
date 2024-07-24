@@ -61,27 +61,6 @@ public class EntityIronGolemExtension extends EntityIronGolem
 	    		
 	    		playSound("rozmir:iron_golem_heal", 1.0F, 1.0F); //play healing sound
 	    		
-	    		if (GolemTweaks.enableIronGolemCracking)
-	        	{
-	        		float percentageOfHealth = getHealth(); //since the max health for Iron Golems is 100, there is no need to do the percentage math equation
-	        		
-	        		if (hasPassedCrackingStage(1) && (percentageOfHealth > 75))
-	        		{
-	        			setPassedCrackingStage(1, false);
-	        		}
-
-	        		if (hasPassedCrackingStage(2) && (percentageOfHealth > 50))
-	        		{
-	        			setPassedCrackingStage(2, false);
-	        		}
-	        		
-	        		if (hasPassedCrackingStage(3) && (percentageOfHealth > 25))
-	        		{
-	        			setPassedCrackingStage(3, false);
-	        		}
-	        	}
-	    		
-	    		
 	            if (itemStack.stackSize <= 0)
 	            {
 	            	player.inventory.setInventorySlotContents(player.inventory.currentItem, (ItemStack)null);
@@ -92,6 +71,31 @@ public class EntityIronGolemExtension extends EntityIronGolem
 	    }
 	    return super.interact(player);    
 	}
+    
+    public void onUpdate()
+    {
+    	super.onUpdate();
+    	
+    	if (GolemTweaks.enableIronGolemCracking)
+    	{
+    		float percentageOfHealth = getHealth(); //since the max health for Iron Golems is 100, there is no need to do the percentage math equation
+    		
+    		if (hasPassedCrackingStage(1) && (percentageOfHealth > 75))
+    		{
+    			setPassedCrackingStage(1, false);
+    		}
+
+    		if (hasPassedCrackingStage(2) && (percentageOfHealth > 50))
+    		{
+    			setPassedCrackingStage(2, false);
+    		}
+    		
+    		if (hasPassedCrackingStage(3) && (percentageOfHealth > 25))
+    		{
+    			setPassedCrackingStage(3, false);
+    		}
+    	}
+    }
     
     public boolean canAttackClass(Class entityClass)
     {

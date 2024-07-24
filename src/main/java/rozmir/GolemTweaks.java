@@ -15,7 +15,7 @@ import rozmir.entity_extensions.EntitySnowballExtension;
 import rozmir.events.ReplaceVanillaGolemsEvent;
 import rozmir.proxy.CommonProxy;
 
-@Mod(modid = "GolemTweaks", name = "Golem Tweaks", version = "1.3")
+@Mod(modid = "GolemTweaks", name = "Golem Tweaks", version = "1.3.1")
 public class GolemTweaks
 {
 	@SidedProxy(clientSide = "rozmir.proxy.ClientProxy", serverSide = "rozmir.proxy.CommonProxy")
