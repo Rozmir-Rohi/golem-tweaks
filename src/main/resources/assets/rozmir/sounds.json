@@ -1,0 +1,15 @@
+{
+	"iron_golem_heal" : {
+		"category" : "neutral",
+		"sounds" : [
+			"iron_golem_heal"
+		]
+	},
+	"iron_golem_crack" : {
+		"category" : "neutral",
+		"sounds" : [
+			"iron_golem_crack1",
+			"iron_golem_crack2"
+		]
+	}
+}

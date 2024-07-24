@@ -102,7 +102,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
     {
 		ArrayList<ItemStack> listOfItemStacks = new ArrayList();
 		listOfItemStacks.add(new ItemStack(Blocks.pumpkin));
-		playSound("mob.sheep.shear", 0.75F, 1.0F);
+		playSound("mob.sheep.shear", 1.0F, 1.0F);
 		setHasPumpkin(false);
 		return listOfItemStacks;
     }
@@ -112,8 +112,9 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
 	{
         Entity entityThatAttackedThisEntity = damageSource.getSourceOfDamage();
         
-        if (
-        		(entityThatAttackedThisEntity != null)
+        if (	
+        		GolemTweaks.enableSnowGolemHealFromSnowBalls
+        		&& (entityThatAttackedThisEntity != null)
         		&& (
         				(entityThatAttackedThisEntity instanceof EntitySnowball)
         				|| (entityThatAttackedThisEntity instanceof EntitySnowballExtension)
@@ -133,7 +134,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
 		{
 			heal(1);
 			extinguish();
-			playSound("step.snow", 0.75F, 1.0F); //play healing sound
+			playSound("step.snow", 1.0F, 1.0F); //play healing sound
 		}
 	}
 	
