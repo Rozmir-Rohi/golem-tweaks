@@ -1,2 +1,3 @@
-entity.golemtweaks.IronGolem.name=Iron Golem
-entity.golemtweaks.SnowGolem.name=Snow Golem
+entity.GolemTweaks.IronGolem.name=Iron Golem
+entity.GolemTweaks.SnowGolem.name=Snow Golem
+entity.GolemTweaks.Snowball.name=Snowball

@@ -1,26 +1,59 @@
 package rozmir;
 
-import rozmir.events.ReplaceVanillaSnowGolem;
-import rozmir.events.ReplaceVanillaIronGolem;
-import net.minecraftforge.common.MinecraftForge;
-import rozmir.entity_extensions.SnowGolemExtension;
-import rozmir.entity_extensions.IronGolemExtension;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
+import rozmir.entity_extensions.EntityIronGolemExtension;
+import rozmir.entity_extensions.EntitySnowGolemExtension;
+import rozmir.entity_extensions.EntitySnowballExtension;
+import rozmir.events.ReplaceVanillaGolemsEvent;
+import rozmir.proxy.CommonProxy;
 
-@Mod(modid = "golemtweaks", name = "Golem Tweaks", version = "1.2")
+@Mod(modid = "GolemTweaks", name = "Golem Tweaks", version = "1.3")
 public class GolemTweaks
 {
-    public static final String MODID = "golemtweaks";
-    public static final String VERSION = "1.2";
-    
-    @Mod.EventHandler
-    public void init(final FMLInitializationEvent event) {
-        int ModEntityID = EntityRegistry.findGlobalUniqueEntityId();
-        EntityRegistry.registerModEntity((Class)IronGolemExtension.class, "IronGolem", ModEntityID++, (Object)this, 50, 2, true);
-        EntityRegistry.registerModEntity((Class)SnowGolemExtension.class, "SnowGolem", ModEntityID++, (Object)this, 50, 2, true);
-        MinecraftForge.EVENT_BUS.register((Object)new ReplaceVanillaIronGolem());
-        MinecraftForge.EVENT_BUS.register((Object)new ReplaceVanillaSnowGolem());
+	@SidedProxy(clientSide = "rozmir.proxy.ClientProxy", serverSide = "rozmir.proxy.CommonProxy")
+	
+	public static CommonProxy proxy;
+	
+	public static Configuration configFile;
+	
+	public static boolean enableSnowGolemBuffs;
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		configFile = new Configuration(event.getSuggestedConfigurationFile());
+		syncConfigSettings();
+	}
+	
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        int modEntityID = EntityRegistry.findGlobalUniqueEntityId();
+        EntityRegistry.registerModEntity((Class) EntityIronGolemExtension.class, "IronGolem", modEntityID++, (Object)this, 50, 2, true);
+        EntityRegistry.registerModEntity((Class) EntitySnowGolemExtension.class, "SnowGolem", modEntityID++, (Object)this, 50, 2, true);
+        
+        if (enableSnowGolemBuffs)
+        {
+        	EntityRegistry.registerModEntity((Class) EntitySnowballExtension.class, "Snowball", modEntityID++, (Object)this, 50, 2, true);
+        }
+        
+        MinecraftForge.EVENT_BUS.register((Object)new ReplaceVanillaGolemsEvent());
+        
+        proxy.registerEntityRenderers();
     }
+    
+    public static void syncConfigSettings()
+    {
+    	
+    	enableSnowGolemBuffs = configFile.getBoolean("enableSnowGolemBuffs", "general", false, "If True: Snow Golems will have 8 HP and will have a small chance to freeze mobs and deal 1 damage with their snowballs. They will also have a chance to deal more damage to blazes.");
+		
+		if (configFile.hasChanged()) {configFile.save();}
+	}
 }
