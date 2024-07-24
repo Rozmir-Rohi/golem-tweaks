@@ -24,6 +24,8 @@ public class GolemTweaks
 	public static Configuration configFile;
 	
 	public static boolean enableSnowGolemBuffs;
+	public static int ironGolemHealAmount;
+	public static boolean enableIronGolemCracking;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -54,6 +56,10 @@ public class GolemTweaks
     	
     	enableSnowGolemBuffs = configFile.getBoolean("enableSnowGolemBuffs", "general", false, "If True: Snow Golems will have 8 HP and will have a small chance to freeze mobs and deal 1 damage with their snowballs. They will also have a chance to deal more damage to blazes.");
 		
+    	ironGolemHealAmount = configFile.getInt("ironGolemHealAmount", "general", 25, 0, 100, "The amount of HP Iron Golems should heal by when they are given Iron Ingots (Vanilla MC 1.15 Default: 25)");
+    	
+    	enableIronGolemCracking = configFile.getBoolean("enableIronGolemCracking", "general", true, "If True: Iron Golems will have thier cracking textures from 1.16 when they are hurt. This will also override textures from texture packs for Iron Golems");
+    	
 		if (configFile.hasChanged()) {configFile.save();}
 	}
 }
