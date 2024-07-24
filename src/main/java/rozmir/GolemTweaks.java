@@ -24,7 +24,7 @@ public class GolemTweaks
 	public static Configuration configFile;
 	
 	public static boolean enableSnowGolemBuffs;
-	public static boolean enableSnowGolemHealFromSnowBalls;
+	public static int snowGolemHealAmount;
 	public static boolean enableIronGolemsAlwaysPassive;
 	public static int ironGolemHealAmount;
 	public static boolean enableIronGolemCracking;
@@ -56,15 +56,15 @@ public class GolemTweaks
     public static void syncConfigSettings()
     {
     	
-    	enableSnowGolemBuffs = configFile.getBoolean("enableSnowGolemBuffs", "general", false, "If True: Snow Golems will have 8 HP and will have a small chance to freeze mobs and deal 1 damage with their snowballs. They will also have a chance to deal more damage to blazes.");
+    	enableSnowGolemBuffs = configFile.getBoolean("enableSnowGolemBuffs", "general", false, "If True: Snow Golems will have 8 HP and will have a small chance to freeze mobs and deal 1 damage with their snowballs. They will also have a chance to deal more damage to Blazes.");
 		
-    	enableSnowGolemHealFromSnowBalls = configFile.getBoolean("enableSnowGolemHealFromSnowBalls", "general", true, "If True: Snow Golems can be healed by being given Snowballs, they will also heal if they are struck by a Snowball.");
+    	snowGolemHealAmount = configFile.getInt("snowGolemHealAmount", "general", 1, 0, 8, "The amount of HP Snow Golems should heal by when they are given a Snowball. This can be disabled by setting it to 0.");
     	
     	enableIronGolemsAlwaysPassive = configFile.getBoolean("enableIronGolemsAlwaysPassive", "general", true, "If True: Iron Golems will always be passive towards the player, even if they are hit by them.");
     	
-    	ironGolemHealAmount = configFile.getInt("ironGolemHealAmount", "general", 25, 0, 100, "The amount of HP Iron Golems should heal by when they are given Iron Ingots (Vanilla MC 1.15 Default: 25).");
+    	ironGolemHealAmount = configFile.getInt("ironGolemHealAmount", "general", 25, 0, 100, "The amount of HP Iron Golems should heal by when they are given an Iron Ingot (Vanilla MC 1.15: 25). This can be disabled by setting it to 0.");
     	
-    	enableIronGolemCracking = configFile.getBoolean("enableIronGolemCracking", "general", true, "If True: Iron Golems will have thier cracking textures from 1.16 when they are hurt. This will also override textures from texture packs for Iron Golems.");
+    	enableIronGolemCracking = configFile.getBoolean("enableIronGolemCracking", "general", true, "If True: Iron Golems will have thier cracking textures from 1.16 when they are hurt, they will also make their cracking sound in different damage stages. This will also override textures from texture packs for Iron Golems. The texture part of this setting works on the client side, so it can be used without affecting worlds/servers.");
     	
 		if (configFile.hasChanged()) {configFile.save();}
 	}

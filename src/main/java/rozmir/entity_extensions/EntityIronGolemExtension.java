@@ -50,7 +50,7 @@ public class EntityIronGolemExtension extends EntityIronGolem
 
 	    if (itemStack != null)
 	    {
-	    	if (itemStack.getItem() == Items.iron_ingot && getHealth() < getMaxHealth()) //detect if player is holding healing item
+	    	if ((GolemTweaks.ironGolemHealAmount > 0) && itemStack.getItem() == Items.iron_ingot && (getHealth() < getMaxHealth())) //detect if player is holding healing item
 	    	{
 	    		if (!player.capabilities.isCreativeMode)
 	            {

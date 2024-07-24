@@ -4,6 +4,8 @@
 
 Mr Crayfish - 1.7.10 tutorials on YouTube showed how to setup basic mod structure.
 
-ganymedes0 - Code for ServerEventHandler.class in the "Etfuturum" mod helped to figure out how to replace vanilla golems with modded ones. Also the code for shearable snow golems was directly sourced from the "Etfuturum" mod.
+ganymedes0 - Code for ServerEventHandler.class in the "Etfuturum" mod helped to figure out how to replace vanilla golems with modded ones. Also the code for shearable Snow Golems was directly sourced from the "Etfuturum" mod.
 
 thehippomaster21 - Code for healing snow golems from snowball projectile was sourced from MutantSnowGolem.class in the "Mutant Creatures" mod
+
+NOTE: The textures for Iron Golem cracking, the Iron Golem cracking sounds, and the Iron Golem heal sound was sourced from the 1.15 version of Minecraft.

@@ -58,7 +58,7 @@ public class EntitySnowballExtension extends EntitySnowball {
 			
 			if (damageToInflict > 0)
 			{
-				((EntityLivingBase)entityThatHasBeenHitByThisSnowBall).addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 30, 150));
+				((EntityLivingBase)entityThatHasBeenHitByThisSnowBall).addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 30, 5));
 			}
 		}
 

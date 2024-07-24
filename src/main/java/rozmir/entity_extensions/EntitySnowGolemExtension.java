@@ -73,7 +73,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
 
 	    if (itemStack != null)
 	    {
-	    	if (itemStack.getItem() == Items.snowball) //detect if player is holding healing item
+	    	if ((GolemTweaks.snowGolemHealAmount > 0) && itemStack.getItem() == Items.snowball) //detect if player is holding healing item
 	    	{
 	    		if (!player.capabilities.isCreativeMode)
 	            {
@@ -113,7 +113,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
         Entity entityThatAttackedThisEntity = damageSource.getSourceOfDamage();
         
         if (	
-        		GolemTweaks.enableSnowGolemHealFromSnowBalls
+        		(GolemTweaks.snowGolemHealAmount > 0)
         		&& (entityThatAttackedThisEntity != null)
         		&& (
         				(entityThatAttackedThisEntity instanceof EntitySnowball)
@@ -132,7 +132,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
 	{
 		if (getHealth() < getMaxHealth())
 		{
-			heal(1);
+			heal(GolemTweaks.snowGolemHealAmount);
 			extinguish();
 			playSound("step.snow", 1.0F, 1.0F); //play healing sound
 		}
