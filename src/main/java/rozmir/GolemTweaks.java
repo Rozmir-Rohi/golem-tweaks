@@ -71,7 +71,7 @@ public class GolemTweaks
     	
     	ironGolemHealAmount = configFile.getInt("ironGolemHealAmount", "general", 25, 0, 100, "The amount of HP Iron Golems should heal by when they are given an Iron Ingot (Vanilla MC 1.15: 25). This can be disabled by setting it to 0.");
     	
-    	enableIronGolemCracking = configFile.getBoolean("enableIronGolemCracking", "general", true, "If True: Iron Golems will have thier cracking textures from 1.16 when they are hurt, they will also make their cracking sound in different damage stages. This will also override textures from texture packs for Iron Golems. The texture part of this setting works on the client side, so it can be used without affecting worlds/servers.");
+    	enableIronGolemCracking = configFile.getBoolean("enableIronGolemCracking", "general", true, "If True: Iron Golems will have thier cracking textures from 1.16 when they are hurt, they will also make their cracking sound in different damage stages. This will also override textures from texture packs for Iron Golems.");
     	
 		if (configFile.hasChanged()) {configFile.save();}
 	}
