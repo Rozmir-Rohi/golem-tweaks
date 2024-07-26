@@ -33,7 +33,7 @@ public class EntitySnowGolemExtension extends EntitySnowman implements IShearabl
         super.applyEntityAttributes();
         
         Double healthToApply = 4.0D;
-        if (GolemTweaks.enableSnowGolemBuffs) {healthToApply = 8.0D;}
+        if (GolemTweaks.enableSnowGolemBuffs) {healthToApply = (double) GolemTweaks.snowGolemHealth;}
         
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(healthToApply);
         getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
