@@ -10,6 +10,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import rozmir.GolemTweaks;
 
 public class EntitySnowballExtension extends EntitySnowball {
 	   private int freezeChance;
@@ -36,21 +37,21 @@ public class EntitySnowballExtension extends EntitySnowball {
 			{
 				damageToInflict = 3;
 				
-				if (freezeChance <= 25)
+				if (freezeChance <= GolemTweaks.snowGolemSlownessAttackChanceForBlazes)
 				{
-					damageToInflict = 9;
+					damageToInflict = GolemTweaks.snowGolemSlownessAttackDamageToBlazes;
 				}
 			}
 			
 			if (
-					freezeChance <= 10
+					freezeChance <= GolemTweaks.snowGolemSlownessAttackChanceForNormalMobs
 					&& !(entityThatHasBeenHitByThisSnowBall instanceof EntityIronGolemExtension)
 					&& !(entityThatHasBeenHitByThisSnowBall instanceof EntitySnowGolemExtension)
 					&& !(entityThatHasBeenHitByThisSnowBall instanceof EntityPlayer)
 					&& !(entityThatHasBeenHitByThisSnowBall  instanceof EntityBlaze)
 				)
 			{
-				damageToInflict = 1;
+				damageToInflict = GolemTweaks.snowGolemSlownessAttackDamageToNormalMobs;
 			}
 
 	
@@ -58,7 +59,7 @@ public class EntitySnowballExtension extends EntitySnowball {
 			
 			if (damageToInflict > 0)
 			{
-				((EntityLivingBase)entityThatHasBeenHitByThisSnowBall).addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 30, 5));
+				((EntityLivingBase)entityThatHasBeenHitByThisSnowBall).addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), GolemTweaks.snowGolemSlownessAttackDuration * 20, GolemTweaks.snowGolemSlownessAttackPotionLevel - 1)); //potion duration formula (MC_ticks = seconds * 20)       potion level formula (potion level = real_potion_level - 1)
 			}
 		}
 
