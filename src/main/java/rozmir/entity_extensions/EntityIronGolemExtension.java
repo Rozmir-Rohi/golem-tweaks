@@ -99,7 +99,13 @@ public class EntityIronGolemExtension extends EntityIronGolem
     
     public boolean canAttackClass(Class entityClass)
     {
-    	if ((GolemTweaks.enableIronGolemsAlwaysPassive && (EntityPlayer.class.isAssignableFrom(entityClass))) || EntitySnowGolemExtension.class.isAssignableFrom(entityClass))
+    	if (
+    			(
+    				EntityPlayer.class.isAssignableFrom(entityClass)
+    				&& (isPlayerCreated() || GolemTweaks.enableAllIronGolemsArePassive)
+    			)
+    			|| EntitySnowGolemExtension.class.isAssignableFrom(entityClass)
+    		)
     	{
     		return false;
     	}

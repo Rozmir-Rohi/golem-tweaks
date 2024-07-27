@@ -24,6 +24,12 @@ public class ReplaceVanillaGolemsEvent
 	            final EntityIronGolemExtension ironGolem = new EntityIronGolemExtension(entityLivingBase.worldObj);
 	            ironGolem.copyLocationAndAnglesFrom((Entity) entityLivingBase);
 	            ironGolem.onSpawnWithEgg((IEntityLivingData) null);
+	            
+	            if (((EntityIronGolem) entityLivingBase).isPlayerCreated())
+	            {
+	            	ironGolem.setPlayerCreated(true);
+	            }
+	            
 	            ironGolem.worldObj.spawnEntityInWorld((Entity)ironGolem);
 	            entityLivingBase.setDead();
 	        }
@@ -31,7 +37,7 @@ public class ReplaceVanillaGolemsEvent
 	        if (entityLivingBase.getClass() == EntitySnowman.class)
 			{
 	            final EntitySnowGolemExtension snowGolem = new EntitySnowGolemExtension(entityLivingBase.worldObj);
-	            snowGolem.copyLocationAndAnglesFrom((Entity)entityLivingBase);
+	            snowGolem.copyLocationAndAnglesFrom((Entity) entityLivingBase);
 	            snowGolem.onSpawnWithEgg((IEntityLivingData) null);
 	            snowGolem.worldObj.spawnEntityInWorld((Entity)snowGolem);
 	            entityLivingBase.setDead();
