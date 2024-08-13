@@ -2,12 +2,14 @@
 	CREDITS
 -------------------------
 
-Mr Crayfish - 1.7.10 tutorials on YouTube showed how to setup basic mod structure.
+Mr Crayfish - Their 1.7.10 modding tutorials on YouTube taught me how to setup basic mod structure.
 
-ganymedes0 - Code for ServerEventHandler.class in the "Etfuturum" mod helped to figure out how to replace vanilla golems with modded ones. Also the code for shearable Snow Golems was directly sourced from the "Etfuturum" mod.
+ganymedes0 - The code for ServerEventHandler.class in the "Etfuturum" mod helped to figure out how to replace vanilla golems with modded ones. Also the code for shearable Snow Golems was directly sourced from the "Etfuturum" mod. Both of these assets were used under the Public Domain license.
 
-thehippomaster21 - Code for healing snow golems from snowball projectile was sourced from MutantSnowGolem.class in the "Mutant Creatures" mod
+thehippomaster21 - The code for healing snow golems from snowball projectile was sourced from MutantSnowGolem.class in the "Mutant Creatures" mod on 22nd of November 2022 under the GNU Affero General Public License v3.0 (https://choosealicense.com/licenses/agpl-3.0/).
 
 Azanor - Thaumcraft API v4.2.2.0 was used as a library for the project. This was used under the MIT License (https://choosealicense.com/licenses/mit/).
+
+Omgise - Provided the Chinese (Simplified) (zh_CN.lang) language file.
 
 NOTE: The textures for Iron Golem cracking, the Iron Golem cracking sounds, and the Iron Golem heal sound was sourced from the 1.15 version of Minecraft.
