@@ -1,10 +1,10 @@
-package rozmir.client.render;
+package golem_tweaks.client.render;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import golem_tweaks.entity_extensions.EntitySnowGolemExtension;
 import net.minecraft.client.renderer.entity.RenderSnowMan;
 import net.minecraft.entity.monster.EntitySnowman;
-import rozmir.entity_extensions.EntitySnowGolemExtension;
 
 @SideOnly(Side.CLIENT)
 public class RenderSnowGolemExtension extends RenderSnowMan {

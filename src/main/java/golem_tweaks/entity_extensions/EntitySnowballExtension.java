@@ -1,5 +1,6 @@
-package rozmir.entity_extensions;
+package golem_tweaks.entity_extensions;
 
+import golem_tweaks.GolemTweaks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -10,7 +11,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import rozmir.GolemTweaks;
 
 public class EntitySnowballExtension extends EntitySnowball {
 	   private int freezeChance;

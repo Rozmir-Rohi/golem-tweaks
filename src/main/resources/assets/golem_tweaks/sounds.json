@@ -1,0 +1,15 @@
+{
+	"mob.irongolem.repair" : {
+		"category" : "neutral",
+		"sounds" : [
+			"minecraft:mob/irongolem/repair"
+		]
+	},
+	"mob.irongolem.damage" : {
+		"category" : "neutral",
+		"sounds" : [
+			"minecraft:mob/irongolem/damage1",
+			"minecraft:mob/irongolem/damage2"
+		]
+	}
+}

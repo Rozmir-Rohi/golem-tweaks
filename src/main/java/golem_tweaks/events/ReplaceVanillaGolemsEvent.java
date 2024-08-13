@@ -1,11 +1,11 @@
-package rozmir.events;
+package golem_tweaks.events;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import golem_tweaks.entity_extensions.EntityIronGolemExtension;
+import golem_tweaks.entity_extensions.EntitySnowGolemExtension;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import rozmir.entity_extensions.EntityIronGolemExtension;
-import rozmir.entity_extensions.EntitySnowGolemExtension;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraftforge.event.entity.living.LivingEvent;

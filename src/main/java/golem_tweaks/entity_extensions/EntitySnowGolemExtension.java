@@ -1,7 +1,8 @@
-package rozmir.entity_extensions;
+package golem_tweaks.entity_extensions;
 
 import java.util.ArrayList;
 
+import golem_tweaks.GolemTweaks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -17,7 +18,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import rozmir.GolemTweaks;
 
 public class EntitySnowGolemExtension extends EntitySnowman implements IShearable
 {	
