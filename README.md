@@ -13,6 +13,8 @@ Quality of life mod for Iron and Snow Golems with backported repairable Iron Gol
 
 **Azanor** - Thaumcraft API v4.2.2.0 was used as a library for the project. This was used under the MIT License (https://choosealicense.com/licenses/mit/).
 
+**Omgise** - Provided the Chinese (Simplified) (zh_CN.lang) language file.
+
 **Note:** The textures for Iron Golem cracking, the Iron Golem cracking sounds, and the Iron Golem heal sound was sourced from the 1.15 version of Minecraft.
 
 <br><br>
