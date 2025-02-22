@@ -1,4 +1,8 @@
 # Golem Tweaks
+**Project Status:** Finished & Finalized
+
+*The developer of this project is retired and does not respond to private messages or GitHub issues.*
+<br><br>
 
 Quality of life mod for Iron and Snow Golems with backported repairable Iron Golems and more!
 
